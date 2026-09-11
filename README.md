@@ -1,6 +1,13 @@
 # FrameFlow Web
 
-A production-ready **Next.js 16 + TypeScript + Tailwind CSS v4** frontend for the FrameFlow media player. Browses and manages a local video library, controls playback, handles category/rating management, and communicates exclusively with the [FrameFlow API](../backend/README.md) over a typed REST client.
+[![Next.js](https://img.shields.io/badge/Next.js-16-black?style=flat-square&logo=next.js)](https://nextjs.org)
+[![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
+[![License: MIT](https://img.shields.io/badge/License-MIT-e44444?style=flat-square)](./LICENSE)
+[![API Repo](https://img.shields.io/badge/API-frameflow--api-181717?style=flat-square&logo=github)](https://github.com/ahmedzzabdalla0/frameflow-api)
+
+A production-ready **Next.js 16 + TypeScript + Tailwind CSS v4** frontend for the FrameFlow media player. Browses and manages a local video library, controls playback, handles category/rating management, and communicates exclusively with the [FrameFlow API](https://github.com/ahmedzzabdalla0/frameflow-api) over a typed REST client.
 
 ---
 
@@ -11,7 +18,7 @@ FrameFlow is a dark-themed, single-user video library interface built on the Nex
 Key design decisions:
 
 - **Next.js 16 App Router** with React 19, `strict: true` TypeScript, and zero SSR data fetching — all data is fetched client-side via the typed API layer so the frontend can be deployed as a static export or behind any CDN.
-- **Tailwind CSS v4** (`@tailwindcss/postcss`) for utility-first styling with a consistent dark-palette design system (`#111` / `#161616` / `#1e1e1e` backgrounds, `#e44444` accent).
+- **Tailwind CSS v4** (`@tailwindcss/postcss`) for utility-first styling with a consistent dark-palette design system.
 - **Atomic Design** component architecture: reusable primitives in `components/ui/` (Button, Input, Select, Modal, …) compose upward into feature-level components. No atom is ever re-implemented inline.
 - **Feature-sliced** folder structure: every product feature (`dashboard`, `player`) is self-contained under `features/`, keeping cross-feature coupling explicit.
 - **Typed API client** in `lib/api/` wraps every backend endpoint with full TypeScript types — the rest of the app never constructs raw `fetch` calls.
@@ -24,58 +31,17 @@ Key design decisions:
 
 ```
 frontend/
-├── app/                          # Next.js App Router
-│   ├── layout.tsx                # Root layout: fonts, Toaster, global CSS
-│   ├── page.tsx                  # Entry point — redirects to /dashboard
-│   ├── not-found.tsx             # Global 404 page
-│   ├── globals.css               # Tailwind base + CSS custom properties
-│   ├── fonts/                    # Local font definitions and font variables
-│   ├── metadata/                 # Centralised Next.js metadata + viewport exports
-│   └── dashboard/                # /dashboard route
-│
+├── app/            # Next.js App Router — pages, layouts, global styles, and metadata
 ├── components/
-│   └── ui/                       # Atomic primitives
-│       ├── button.tsx            # <Button variant="primary|secondary|ghost|danger|icon" size="sm|md|lg">
-│       ├── input.tsx             # <Input> — all text inputs
-│       ├── select.tsx            # <Select> — all dropdowns
-│       ├── modal.tsx             # <Modal> — all dialog overlays
-│       ├── loading-spinner.tsx   # Inline / full-screen loading state
-│       ├── empty-state.tsx       # Zero-results placeholder
-│       ├── error-state.tsx       # Fetch-error placeholder
-│       ├── category-badges.tsx   # Pill-style category tag list
-│       ├── rating-control.tsx    # Star rating input + display
-│       └── sonner.tsx            # Themed <Toaster> wrapper
-│
+│   └── ui/         # Atomic UI primitives shared across the entire app
 ├── features/
-│   ├── dashboard/
-│   │   └── components/           # Dashboard-specific composed components
-│   └── player/
-│       ├── components/           # Player UI components
-│       ├── hooks/                # Player state and behaviour hooks
-│       └── utils/                # Player-local utility functions
-│
+│   ├── dashboard/  # Admin dashboard feature — video management, categories, and settings
+│   └── player/     # Player feature — reel feed, gallery view, and playback controls
 ├── lib/
-│   ├── api/
-│   │   ├── client.ts             # Base fetch wrapper (apiGet, apiPost, apiPut, apiDelete, mediaUrl)
-│   │   ├── videos.ts             # Videos endpoint functions
-│   │   ├── categories.ts         # Categories endpoint functions
-│   │   ├── settings.ts           # Player settings endpoint functions
-│   │   └── thumbs.ts             # Thumbnail URL helpers
-│   ├── constants/                # App-wide constants (sort options, pagination defaults, …)
-│   └── utils.ts                  # General utility functions (cn, formatters, …)
-│
-├── types/
-│   ├── api.ts                    # Raw API response types (mirrors backend DTOs)
-│   ├── dashboard.ts              # Dashboard-specific derived types
-│   └── player.ts                 # Player-specific derived types
-│
-├── public/                       # Static assets
-├── .env.example                  # Environment variable template
-├── next.config.ts                # Next.js configuration
-├── tsconfig.json                 # TypeScript strict configuration
-├── eslint.config.mjs             # ESLint + Next.js + Tailwind rules
-├── postcss.config.mjs            # PostCSS with @tailwindcss/postcss
-└── .prettierrc.json              # Prettier + import-sort + Tailwind class-sort plugins
+│   ├── api/        # Typed REST client and per-resource endpoint functions
+│   └── constants/  # App-wide constants
+├── types/          # Shared TypeScript types mirroring backend DTOs and derived UI shapes
+└── public/         # Static assets
 ```
 
 ---
@@ -136,7 +102,7 @@ The base URL is read from `NEXT_PUBLIC_API_URL` at build time, falling back to `
 ### Prerequisites
 
 - Node.js 20+
-- The [FrameFlow API](../backend/README.md) running and reachable
+- The [FrameFlow API](https://github.com/ahmedzzabdalla0/frameflow-api) running and reachable
 
 ### Steps
 
