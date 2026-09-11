@@ -4,8 +4,9 @@
 [![React](https://img.shields.io/badge/React-19-61dafb?style=flat-square&logo=react&logoColor=black)](https://react.dev)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-3178c6?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4-38bdf8?style=flat-square&logo=tailwindcss&logoColor=white)](https://tailwindcss.com)
-[![License: MIT](https://img.shields.io/badge/License-MIT-e44444?style=flat-square)](./LICENSE)
 [![API Repo](https://img.shields.io/badge/API-frameflow--api-181717?style=flat-square&logo=github)](https://github.com/ahmedzzabdalla0/frameflow-api)
+[![Portfolio](https://img.shields.io/badge/Portfolio-frameflow-000000?style=flat-square&logo=vercel&logoColor=white)](https://portfolio-ahmedabdelsalam.vercel.app/projects/frameflow)
+[![License: MIT](https://img.shields.io/badge/License-MIT-e44444?style=flat-square)](./LICENSE)
 
 A production-ready **Next.js 16 + TypeScript + Tailwind CSS v4** frontend for the FrameFlow media player. Browses and manages a local video library, controls playback, handles category/rating management, and communicates exclusively with the [FrameFlow API](https://github.com/ahmedzzabdalla0/frameflow-api) over a typed REST client.
 
@@ -13,7 +14,7 @@ A production-ready **Next.js 16 + TypeScript + Tailwind CSS v4** frontend for th
 
 ## 1. Project Overview
 
-FrameFlow is a dark-themed, single-user video library interface built on the Next.js App Router. It connects to the FrameFlow API backend to display, filter, sort, and play video files stored on a local server — no third-party media services, no cloud dependencies.
+FrameFlow is a dark-themed, single-user video library interface built on the Next.js App Router. It connects to the FrameFlow API backend — **[frameflow-api](https://github.com/ahmedzzabdalla0/frameflow-api)** — to display, filter, sort, and play video files stored on a local server — no third-party media services, no cloud dependencies. This project is also featured on the **[author's portfolio](https://portfolio-ahmedabdelsalam.vercel.app/projects/frameflow)**.
 
 Key design decisions:
 
@@ -57,7 +58,9 @@ All visual decisions are encoded as Tailwind utilities applied consistently thro
 | Background base  | `#111`    | Page/body background                     |
 | Background card  | `#161616` | Panel, modal, card surfaces              |
 | Background hover | `#1e1e1e` | Hover state for interactive surfaces     |
-| Accent           | `#e44444` | Primary action colour, active indicators |
+| Accent           | `#a855f7` | Primary action colour, active indicators |
+| Accent hover     | `#9333ea` | Hover state for primary actions          |
+| Accent muted     | `#2c1750` | Subtle accent backgrounds                |
 | Text primary     | `#ddd`    | Body text, headings                      |
 | Text secondary   | `#aaa`    | Labels, metadata                         |
 | Text muted       | `#555`    | Placeholders, disabled text              |
@@ -149,6 +152,7 @@ If you use, modify, or distribute this project or any part of its code, please m
 
 - **GitHub:** [@ahmedzzabdalla0](https://github.com/ahmedzzabdalla0)
 - **LinkedIn:** [Ahmed Mohamed Abdelsalam](https://www.linkedin.com/in/ahmedabdelsalam0)
+- **Portfolio:** [portfolio-ahmedabdelsalam.vercel.app](https://portfolio-ahmedabdelsalam.vercel.app)
 
 ---
 

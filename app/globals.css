@@ -65,8 +65,17 @@
   --color-glass: rgba(244, 241, 251, 0.06);
   --color-glass-strong: rgba(244, 241, 251, 0.1);
   --color-glass-border: rgba(244, 241, 251, 0.14);
-  --gradient-brand: linear-gradient(135deg, #7c3aed 0%, #c026d3 55%, #ec4899 100%);
-  --gradient-brand-soft: linear-gradient(135deg, rgba(124, 58, 237, 0.35) 0%, rgba(236, 72, 153, 0.35) 100%);
+  --gradient-brand: linear-gradient(
+    135deg,
+    #7c3aed 0%,
+    #c026d3 55%,
+    #ec4899 100%
+  );
+  --gradient-brand-soft: linear-gradient(
+    135deg,
+    rgba(124, 58, 237, 0.35) 0%,
+    rgba(236, 72, 153, 0.35) 100%
+  );
   --gradient-scrim: linear-gradient(
     180deg,
     rgba(10, 7, 19, 0) 0%,
@@ -79,7 +88,9 @@
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 
-  --font-sans: var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans:
+    var(--font-plus-jakarta), -apple-system, BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
   --font-display: var(--font-manrope), var(--font-sans);
 
   --text-xs: clamp(0.75rem, 0.726rem + 0.0962vw, 0.8125rem);
@@ -114,8 +125,16 @@ body {
   user-select: none;
   overscroll-behavior: none;
   background-image:
-    radial-gradient(ellipse 60% 40% at 15% 0%, rgba(124, 58, 237, 0.16), transparent 60%),
-    radial-gradient(ellipse 55% 45% at 100% 20%, rgba(236, 72, 153, 0.12), transparent 60%);
+    radial-gradient(
+      ellipse 60% 40% at 15% 0%,
+      rgba(124, 58, 237, 0.16),
+      transparent 60%
+    ),
+    radial-gradient(
+      ellipse 55% 45% at 100% 20%,
+      rgba(236, 72, 153, 0.12),
+      transparent 60%
+    );
   background-attachment: fixed;
   background-repeat: no-repeat;
 }
